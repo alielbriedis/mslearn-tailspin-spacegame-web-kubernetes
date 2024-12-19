@@ -15,7 +15,7 @@ stages:
   - job: 'Build'
     displayName: 'Build job'
     pool:
-      vmImage: 'ubuntu-20.04'
+      name: 'aleksliepool22'
     steps:
     - task: Docker@2
       displayName: 'Build and push the image to container registry'
@@ -47,7 +47,7 @@ stages:
   - deployment: Deploy
     displayName: Deploy
     pool:
-      vmImage: 'ubuntu-20.04'
+      name: 'aleksliepool22'
     environment: 'Dev'
     variables:
     - group: Release
